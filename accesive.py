@@ -314,6 +314,7 @@ def plus_petits(p):
         model.Add(k1 + k2 + k3 >= 2*(A+B))
         model.Minimize(k2)
         model.Minimize(A+B)
+        model.Minimize(k2)
         solver = cp_model.CpSolver()
         status = solver.Solve(model)
         if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
@@ -996,4 +997,5 @@ def main_gun(p):
     return "done! now you can see it by going on https://lazyslug.com/  and paste directly on \"Type or paste RLE data into the box below and click on the View button\" and click on view."
 
 print("hi, this is a code to generate small gun and oscillator in game of life. you can try to understand everything, it's in French and perhaps a bit hard to follow. feel free to ask me any question! you can try main_oscillator(p a period who is a integrer) and main_gun(p a period who is a integrer), they will copy something you can paste on website to see the result. just follow the guidelines and have fun!")
+
 
